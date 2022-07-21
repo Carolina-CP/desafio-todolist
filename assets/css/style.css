@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+    box-sizing:border-box;
+    
+}
+
+body{
+    background-color: rgb(243, 242, 242);
+    font-family: ubuntu;
+    display: flex;
+    min-height: 95vh;
+    max-height: 100vh;
+    
+    
+}
+
+.container{
+    display: block;
+    text-align: center;
+    border: 1px;
+    border: black 1px solid;
+    padding: auto;
+    margin: auto;
+}
+
+h2{
+    font-family: Titan One;
+    font-weight: 400;
+    padding: 3rem 0.5rem 0.5rem 1.5rem;
+    margin-bottom: 3vh;
+    text-align: left;
+    
+}
+.datos{
+    
+    display: block;
+}
+
+.resultados{
+    height: 30%;
+    width: 20rem;
+    background-color: rgb(108, 150, 53);
+    text-align: center;
+    padding: 2rem 1rem;
+    border: 2px rgb(71, 6, 31) solid;
+    display: inline-flex;
+}
+
+.resultados-contador{
+    width: 50%;
+    background-color: brown;
+    text-align: left;
+    justify-content: space-around;
+    
+}
+
+.resultados-tareas{
+    background-color: aqua;
+    width: 50%;
+    text-align: left;
+   
+}
+
+ul{
+    list-style-type: none;
+    text-align:left;
+    justify-content: space-around; 
+}
+
+.boton-eliminar{
+    background-color: aqua;
+    color: red;
+    font-weight: 400;
+}
