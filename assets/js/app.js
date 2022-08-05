@@ -1,3 +1,4 @@
+// aquí se crean las variables
 const inputTareas = document.querySelector('#nueva-tarea');
 const btnAgregarTareas = document.querySelector('#btn-tarea');
 const listaDeTareas = document.querySelector('#lista-tareas');
@@ -6,6 +7,7 @@ const tareas = [];
 let id = 1;
 let ejecutada = false;
 
+//aquí llamo al botón agregar
 btnAgregarTareas.addEventListener('click', () => {
   console.log('botón ok')
 
@@ -32,7 +34,7 @@ btnAgregarTareas.addEventListener('click', () => {
 });
 
 
-
+// aquí se suponía que trabajaría el checked, pero no supe hacerlo... igual intentaré hasta el domingo. 
 
 function seleccionarTarea(ejecutada) {
   console.log('seleccionada')
@@ -47,10 +49,7 @@ function seleccionarTarea(ejecutada) {
 
 }
 
-
 console.log(seleccionarTarea.value)
-
-
 
 
 let html = '';
@@ -66,7 +65,7 @@ for (let tarea of tareas) {
 listaDeTareas.innerHTML = html;
 
 
-
+// aquí trabajo la eliminiacion de la tarea, me guié con la clase del profe. 
 function eliminarTarea(id) {
   console.log('eliminar')
   console.log(tareas)
