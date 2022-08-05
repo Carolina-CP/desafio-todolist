@@ -29,12 +29,12 @@ btnAgregarTareas.addEventListener('click', () => {
          <button class='boton-eliminar' type="reset" onclick="eliminarTarea(${tarea.id})">X</button> 
          </div> 
         `}
-
+  inputTareas.value = '';
   listaDeTareas.innerHTML = html;
 });
 
 
-// aquí se suponía que trabajaría el checked, pero no supe hacerlo... igual intentaré hasta el domingo. 
+// aquí se suponía que trabajaría el checked, pero no supe hacerlo :(
 
 function seleccionarTarea(ejecutada) {
   console.log('seleccionada')
