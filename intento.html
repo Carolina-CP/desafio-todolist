@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="container">
+        <h2>Todo List</h2>
+        <div class="tareas">
+         
+            <input id="nueva-tarea" type="text" placeholder="Agregar tarea">
+            <button id="btn-tarea"  type="submit">Agregar</button>
+        
+        </div>
+        <div class="resultados">
+        
+            <div class="resultados-contador">
+               <p class="resultado-total">Total:<span id="resultado-total"> 0</span> </p> 
+               <p class="resultado-realizadas">Realizadas:<span id="resultado-realizadas"> 0</span></p> 
+            </div>
+        
+        
+            <div class="resultados-tareas">
+                <ul class="resultado-lista" id="lista-tareas">
+                   
+                </ul>
+            </div> 
+        </div>
+        </section>
+
+////////////////////////////////////////////////////////
+        <script>
+
+const inputTareas = document.querySelector('#nueva-tarea');
+const btnAgregarTareas = document.querySelector('#btn-tarea');
+const listaDeTareas = document.querySelector('#lista-tareas');
+const contadorTareas = document.querySelector('#resultado-total');
+const tareas = [];
+let id = 1;
+let ejecutada = false;
+
+btnAgregarTareas.addEventListener('click', () => {
+    console.log('botón ok')
+    
+    const nuevaTarea = {id: id ,nombre: inputTareas.value, ejecutada: ejecutada};
+    
+    console.log(nuevaTarea);
+
+    tareas.push(nuevaTarea);
+    contadorTareas.innerHTML = tareas.length;
+    id ++;
+
+    let html='';
+    for (let tarea of tareas) {
+        html += `
+        <div class="resultado-id">${tarea.id} -
+         ${tarea.nombre} -  
+    
+         <input type="checkbox" id="tarea-ejecutada" onclick="seleccionarTarea(${tarea.ejecutada})" > -
+         <button class='boton-eliminar' type="reset" onclick="eliminarTarea(${tarea.id})">X</button> -
+         </div> 
+        `}
+        
+        listaDeTareas.innerHTML= html;
+  });
+
+ 
+
+  
+  function seleccionarTarea(ejecutada){
+    console.log('seleccionada')
+    /*let index = tareas.findIndex((t => t.ejecutada === true))
+    tareas.map(index,1);
+    console.log(ejecutada.value)*/
+     if(ejecutada.checked === true) {
+        console.log('Tarea Ejecutada');
+              } 
+    console.log(tareas) 
+    return seleccionarTarea
+
+  }
+
+  
+        console.log(seleccionarTarea.value)
+        
+
+    
+
+    let html='';
+    for (let tarea of tareas) {
+        html += `
+        <div class="resultado-id">${tarea.id} -
+         ${tarea.nombre} -  
+         <input type="checkbox" name="seleccionar" id="tarea-ejecutada" onclick="seleccionarTarea(${tarea.id})" > -
+         <button class='boton-eliminar' type="reset" onclick="eliminarTarea(${tarea.id})">X</button> -
+         </div> 
+        `}
+
+        listaDeTareas.innerHTML= html;
+    
+  
+
+  function eliminarTarea(id){
+    console.log('eliminar')
+    console.log(tareas)
+    let index = tareas.findIndex((t => t.id === id))
+    tareas.splice(index,1);
+    console.log(tareas);
+    contadorTareas.innerHTML = tareas.length;
+
+    let html='';
+    for (let tarea of tareas) {
+        html += `
+        <div class="resultado-id">${tarea.id} -
+         ${tarea.nombre} -  
+         <input type="checkbox" name="seleccionar" id="tarea-ejecutada" onclick="seleccionarTarea(${tarea.id})" > -
+         <button class='boton-eliminar' type="reset" onclick="eliminarTarea(${tarea.id})">X</button> -
+         </div> 
+        `}
+
+        listaDeTareas.innerHTML= html;
+  }
+
+ 
+
+
+        </script>
+    
+</body>
+</html>
